@@ -1,4 +1,4 @@
-name: CI — Backend (.NET)
+name: CI — Backend (Node)
 
 on:
   push:
@@ -17,18 +17,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup .NET 8
+      - name: Setup node
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
         working-directory: Backend
-        run: dotnet restore 
+        run: npm run 
 
       - name: Build
         working-directory: Backend
-        run: dotnet build -c Release --no-restore 
+        run: npm run 
 
     #  - name: Run tests
      #   working-directory: Backend
